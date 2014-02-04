@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/project_container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+
+	<android.support.v4.widget.DrawerLayout
+		android:id="@+id/drawer_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".HomeActivity" >
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" >
+
+			<com.sothree.slidinguppanel.SlidingUpPanelLayout
+				android:id="@+id/sliding_layout_panel"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" >
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical" >
+
+					<TextView
+						android:id="@+id/label_select_assortment"
+						style="@style/WizardFormLabel"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Select Assortment:"
+						android:textAppearance="?android:attr/textAppearanceSmall" />
+
+					<Spinner
+						android:id="@+id/assortment_selection_spinner"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@android:drawable/btn_dropdown"
+						android:textAlignment="center"
+						tools:listitem="@android:layout/simple_spinner_item" />
+
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="1dp"
+						android:background="@android:color/background_dark" />
+
+					<ListView
+						android:id="@+id/assortment_listView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						tools:listitem="@android:layout/simple_list_item_checked" >
+					</ListView>
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:background="@android:color/darker_gray"
+					android:orientation="vertical" >
+
+					<include
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						layout="@layout/cart_header" />
+
+					<ListView
+						android:id="@+id/cart_listview"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+                        android:background="@android:color/transparent" />
+				</LinearLayout>
+			</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+		</FrameLayout>
+
+		<ListView
+			android:id="@+id/project_categories_drawer_list"
+			android:layout_width="250dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="start"
+			android:background="@android:color/background_light"
+			android:choiceMode="singleChoice"
+			android:divider="@android:color/darker_gray"
+			android:dividerHeight="1dp" >
+		</ListView>
+	</android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>
